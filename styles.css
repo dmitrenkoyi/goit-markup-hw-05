@@ -166,6 +166,7 @@ border-radius: 4px;
 padding: 10px 32px;
 display: inline-block;
 min-width: 200px;
+cursor: pointer;
 }
 
 /* особенности */
@@ -430,6 +431,69 @@ transition: background-color  250ms var(--timing-function),
 .item-footer svg {
     fill: currentColor;
 }
+/* Модалка */
+.backdrop {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.2);
+
+opacity: 1;
+transition: opacity 250ms var(--timing-function);
+
+/* visibility: visible;
+transition: opacity 250ms var(--timing-function),
+visibility 250ms var(--timing-function), */
+}
+.backdrop.is-hidden{
+/* visibility: hidden; */
+pointer-events: none;
+opacity: 0;
+}
+
+.modal {
+position: absolute;
+top: 50%;
+left: 50%;
+min-width: 528px;
+min-height: 581px;
+
+background: #FFFFFF;
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px ;
+
+transform: translate(-50%, -50%)  scale(1);
+transition:transform 250ms var(--timing-function);
+}
+
+.backdrop.is-hidden .modal{
+transform: translate(-50%, -50%)  scale(0.9);
+}
+
+.cloce{
+position: absolute;
+top: 16px;
+right: 8px;
+width: 30px;
+height: 30px;
+padding: 0;
+display: flex;
+    justify-content: center;
+    align-items: center;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.1);
+color: #000000;
+border-radius: 50%;
+cursor: pointer;
+}
+.cloce svg{
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+}
+
 /* Свойства для 2стр Портфолио */
 /*кноки фильтра */
 .filtre {
@@ -516,8 +580,12 @@ opacity: 0;
 }
 li:hover .overlay{
 opacity: 1;
-
 transform: translateY(0);
+}
+
+.overlay-text{
+padding: 63px 24px;
+margin: 0;
 }
 
 .card-content{

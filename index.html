@@ -50,7 +50,7 @@
         <!--    Шапка(герой) фоновая картинка  -->
         <section class="hero">
             <h1>Эффективные решения <br> для вашего бизнеса</h1>
-            <a href="" class="button">Заказать услугу</a>
+            <button class="button" data-modal-open>Заказать услугу</button>
         </section>
 
 
@@ -317,7 +317,7 @@
                         </a>
                     </li>
                     <li class="clients-item">
-                        <a a class="client-link" href="">
+                        <a class="client-link" href="">
                             <svg class="clients-icon" width="88" height="45">
                                 <use href="./images/icon/symbol-defs.svg#icon-logo6"></use>
                             </svg>
@@ -375,6 +375,21 @@
                 </ul>
             </div>
     </footer>
+    <!-- Модалка -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="cloce" data-modal-close>
+                <svg>
+                    <use href="./images/icon/symbol-defs.svg#icon-close1"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Скрипт для модалки -->
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
